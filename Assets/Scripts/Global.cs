@@ -7,6 +7,7 @@ public class Global : MonoBehaviour
     //General Beans
     public static int numBeans = 0;
     public static int beansPerClick = 1;
+    public static int beansPerSec = 0;
 
     //Upgrade 1
     public static int upgrade1Increase = 1;
@@ -37,4 +38,10 @@ public class Global : MonoBehaviour
     public static int upgrade5Cost = 50000;
     public static int upgrade5CostInc = 500;
     public static int upgrade5MaxCost = 150000;
+
+    //Upgrade 6
+    public static int upgrade6Increase = 1;
+    public static int upgrade6Cost = 10;
+    public static int upgrade6CostInc = 1;
+    public static int upgrade6MaxCost = 100;
 }
