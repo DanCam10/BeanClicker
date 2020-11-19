@@ -7,12 +7,33 @@ public class BeanCounter : MonoBehaviour
 {
     public Text BeansCountText;
     public Text BeansPerClickText;
+    public Text BeansPerSecText;
 
     public Text Upgrade1Text;
     public Text Upgrade2Text;
     public Text Upgrade3Text;
     public Text Upgrade4Text;
     public Text Upgrade5Text;
+    public Text Upgrade6Text;
+
+    private void Start()
+    {
+        StartCoroutine(Time());
+    }
+    IEnumerator Time()
+    {
+        while (true)
+        {
+            SecondCounter();
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    void SecondCounter()
+    {
+        Global.numBeans += Global.beansPerSec;
+        BeansCountText.text = "Beans: " + Global.numBeans.ToString();
+    }
 
     void OnMouseDown()
     {
@@ -105,11 +126,42 @@ public class BeanCounter : MonoBehaviour
         }
     }
 
-    void UpgradeHelper(int cost, int increase, int costInc, int maxCost, Text text)
+    public void Upgrade6()
     {
-        Global.beansPerClick += increase;
+        if (Global.upgrade6Cost < Global.upgrade6MaxCost && Global.numBeans >= Global.upgrade6Cost)
+        {
+            UpgradeHelper(Global.upgrade6Cost, Global.upgrade6Increase, Global.upgrade6CostInc, Global.upgrade6MaxCost, Upgrade6Text, true);
+            Global.upgrade6Cost += Global.upgrade6CostInc;
+            if (Global.upgrade6Cost >= Global.upgrade6MaxCost)
+            {
+                Upgrade6Text.text = "Upgrade Max";
+            }
+            else
+            {
+                Upgrade6Text.text = "Beans Per Second +" + Global.upgrade6Increase + "\nCosts: " + Global.upgrade6Cost + " Beans";
+            }
+        }
+    }
+
+    void UpgradeHelper(int cost, int increase, int costInc, int maxCost, Text text, bool isPerSec = false)
+    {
+        if (isPerSec)
+        {
+            Global.beansPerSec += increase;
+        }
+        else
+        {
+            Global.beansPerClick += increase;
+        }
         Global.numBeans -= cost;
         BeansCountText.text = "Beans: " + Global.numBeans.ToString();
         BeansPerClickText.text = "BPC: " + Global.beansPerClick.ToString();
+        BeansPerSecText.text = "BPS: " + Global.beansPerSec.ToString();
+    }
+
+    void UpgradeHelper2(int cost, int increase, int costInc, int maxCost, Text text)
+    {
+        Global.beansPerSec += increase;
+        Global.numBeans -= cost;
     }
 }
