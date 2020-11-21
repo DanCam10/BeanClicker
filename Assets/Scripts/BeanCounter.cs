@@ -15,6 +15,10 @@ public class BeanCounter : MonoBehaviour
     public Text Upgrade4Text;
     public Text Upgrade5Text;
     public Text Upgrade6Text;
+    public Text Upgrade7Text;
+    public Text Upgrade8Text;
+    public Text Upgrade9Text;
+    public Text Upgrade10Text;
 
     private void Start()
     {
@@ -32,13 +36,13 @@ public class BeanCounter : MonoBehaviour
     void SecondCounter()
     {
         Global.numBeans += Global.beansPerSec;
-        BeansCountText.text = "Beans: " + Global.numBeans.ToString();
+        BeansCountText.text = "Beans: " + Global.numBeans.ToString("n0");
     }
 
     void OnMouseDown()
     {
         Global.numBeans += Global.beansPerClick;
-        BeansCountText.text = "Beans: " + Global.numBeans.ToString();
+        BeansCountText.text = "Beans: " + Global.numBeans.ToString("n0");
     }
 
     public void Upgrade1()
@@ -53,7 +57,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade1Text.text = "Beans Per Click +" + Global.upgrade1Increase + "\nCosts: " + Global.upgrade1Cost + " Beans";
+                Upgrade1Text.text = "Beans Per Click +" + Global.upgrade1Increase.ToString("n") + "\nCosts: " + Global.upgrade1Cost.ToString("n") + " Beans";
             }
         }
     }
@@ -70,7 +74,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade2Text.text = "Beans Per Click +" + Global.upgrade2Increase + "\nCosts: " + Global.upgrade2Cost + " Beans";
+                Upgrade2Text.text = "Beans Per Click +" + Global.upgrade2Increase.ToString("n") + "\nCosts: " + Global.upgrade2Cost.ToString("n") + " Beans";
             }  
         }
     }
@@ -87,7 +91,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade3Text.text = "Beans Per Click +" + Global.upgrade3Increase + "\nCosts: " + Global.upgrade3Cost + " Beans";
+                Upgrade3Text.text = "Beans Per Click +" + Global.upgrade3Increase.ToString("n") + "\nCosts: " + Global.upgrade3Cost.ToString("n") + " Beans";
             }
         }
     }
@@ -104,7 +108,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade4Text.text = "Beans Per Click +" + Global.upgrade4Increase + "\nCosts: " + Global.upgrade4Cost + " Beans";
+                Upgrade4Text.text = "Beans Per Click +" + Global.upgrade4Increase.ToString("n") + "\nCosts: " + Global.upgrade4Cost.ToString("n") + " Beans";
             }
         }
     }
@@ -121,7 +125,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade5Text.text = "Beans Per Click +" + Global.upgrade5Increase + "\nCosts: " + Global.upgrade5Cost + " Beans";
+                Upgrade5Text.text = "Beans Per Click +" + Global.upgrade5Increase.ToString("n") + "\nCosts: " + Global.upgrade5Cost.ToString("n") + " Beans";
             }
         }
     }
@@ -138,7 +142,75 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade6Text.text = "Beans Per Second +" + Global.upgrade6Increase + "\nCosts: " + Global.upgrade6Cost + " Beans";
+                Upgrade6Text.text = "Beans Per Second +" + Global.upgrade6Increase.ToString("n") + "\nCosts: " + Global.upgrade6Cost.ToString("n") + " Beans";
+            }
+        }
+    }
+
+    public void Upgrade7()
+    {
+        if (Global.upgrade7Cost < Global.upgrade7MaxCost && Global.numBeans >= Global.upgrade7Cost)
+        {
+            UpgradeHelper(Global.upgrade7Cost, Global.upgrade7Increase, Global.upgrade7CostInc, Global.upgrade7MaxCost, Upgrade7Text, true);
+            Global.upgrade7Cost += Global.upgrade7CostInc;
+            if (Global.upgrade7Cost >= Global.upgrade7MaxCost)
+            {
+                Upgrade7Text.text = "Upgrade Max";
+            }
+            else
+            {
+                Upgrade7Text.text = "Beans Per Second +" + Global.upgrade7Increase.ToString("n") + "\nCosts: " + Global.upgrade7Cost.ToString("n") + " Beans";
+            }
+        }
+    }
+
+    public void Upgrade8()
+    {
+        if (Global.upgrade8Cost < Global.upgrade8MaxCost && Global.numBeans >= Global.upgrade8Cost)
+        {
+            UpgradeHelper(Global.upgrade8Cost, Global.upgrade8Increase, Global.upgrade8CostInc, Global.upgrade8MaxCost, Upgrade8Text, true);
+            Global.upgrade8Cost += Global.upgrade8CostInc;
+            if (Global.upgrade8Cost >= Global.upgrade8MaxCost)
+            {
+                Upgrade8Text.text = "Upgrade Max";
+            }
+            else
+            {
+                Upgrade8Text.text = "Beans Per Second +" + Global.upgrade8Increase.ToString("n") + "\nCosts: " + Global.upgrade8Cost.ToString("n") + " Beans";
+            }
+        }
+    }
+
+    public void Upgrade9()
+    {
+        if (Global.upgrade9Cost < Global.upgrade9MaxCost && Global.numBeans >= Global.upgrade9Cost)
+        {
+            UpgradeHelper(Global.upgrade9Cost, Global.upgrade9Increase, Global.upgrade9CostInc, Global.upgrade9MaxCost, Upgrade9Text, true);
+            Global.upgrade9Cost += Global.upgrade9CostInc;
+            if (Global.upgrade9Cost >= Global.upgrade9MaxCost)
+            {
+                Upgrade9Text.text = "Upgrade Max";
+            }
+            else
+            {
+                Upgrade9Text.text = "Beans Per Second +" + Global.upgrade9Increase.ToString("n") + "\nCosts: " + Global.upgrade9Cost.ToString("n") + " Beans";
+            }
+        }
+    }
+
+    public void Upgrade10()
+    {
+        if (Global.upgrade10Cost < Global.upgrade10MaxCost && Global.numBeans >= Global.upgrade10Cost)
+        {
+            UpgradeHelper(Global.upgrade10Cost, Global.upgrade10Increase, Global.upgrade10CostInc, Global.upgrade10MaxCost, Upgrade10Text, true);
+            Global.upgrade10Cost += Global.upgrade10CostInc;
+            if (Global.upgrade10Cost >= Global.upgrade10MaxCost)
+            {
+                Upgrade10Text.text = "Upgrade Max";
+            }
+            else
+            {
+                Upgrade10Text.text = "Beans Per Second +" + Global.upgrade10Increase.ToString("n") + "\nCosts: " + Global.upgrade10Cost.ToString("n") + " Beans";
             }
         }
     }
@@ -154,14 +226,8 @@ public class BeanCounter : MonoBehaviour
             Global.beansPerClick += increase;
         }
         Global.numBeans -= cost;
-        BeansCountText.text = "Beans: " + Global.numBeans.ToString();
-        BeansPerClickText.text = "BPC: " + Global.beansPerClick.ToString();
-        BeansPerSecText.text = "BPS: " + Global.beansPerSec.ToString();
-    }
-
-    void UpgradeHelper2(int cost, int increase, int costInc, int maxCost, Text text)
-    {
-        Global.beansPerSec += increase;
-        Global.numBeans -= cost;
+        BeansCountText.text = "Beans: " + Global.numBeans.ToString("n");
+        BeansPerClickText.text = "BPC: " + Global.beansPerClick.ToString("n");
+        BeansPerSecText.text = "BPS: " + Global.beansPerSec.ToString("n");
     }
 }
