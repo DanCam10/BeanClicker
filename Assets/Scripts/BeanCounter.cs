@@ -57,7 +57,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade1Text.text = "Beans Per Click +" + Global.upgrade1Increase.ToString("n") + "\nCosts: " + Global.upgrade1Cost.ToString("n") + " Beans";
+                Upgrade1Text.text = "Beans Per Click +" + Global.upgrade1Increase.ToString("n0") + "\nCosts: " + Global.upgrade1Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -74,7 +74,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade2Text.text = "Beans Per Click +" + Global.upgrade2Increase.ToString("n") + "\nCosts: " + Global.upgrade2Cost.ToString("n") + " Beans";
+                Upgrade2Text.text = "Beans Per Click +" + Global.upgrade2Increase.ToString("n0") + "\nCosts: " + Global.upgrade2Cost.ToString("n0") + " Beans";
             }  
         }
     }
@@ -91,7 +91,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade3Text.text = "Beans Per Click +" + Global.upgrade3Increase.ToString("n") + "\nCosts: " + Global.upgrade3Cost.ToString("n") + " Beans";
+                Upgrade3Text.text = "Beans Per Click +" + Global.upgrade3Increase.ToString("n0") + "\nCosts: " + Global.upgrade3Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -108,7 +108,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade4Text.text = "Beans Per Click +" + Global.upgrade4Increase.ToString("n") + "\nCosts: " + Global.upgrade4Cost.ToString("n") + " Beans";
+                Upgrade4Text.text = "Beans Per Click +" + Global.upgrade4Increase.ToString("n0") + "\nCosts: " + Global.upgrade4Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -125,7 +125,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade5Text.text = "Beans Per Click +" + Global.upgrade5Increase.ToString("n") + "\nCosts: " + Global.upgrade5Cost.ToString("n") + " Beans";
+                Upgrade5Text.text = "Beans Per Click +" + Global.upgrade5Increase.ToString("n0") + "\nCosts: " + Global.upgrade5Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -142,7 +142,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade6Text.text = "Beans Per Second +" + Global.upgrade6Increase.ToString("n") + "\nCosts: " + Global.upgrade6Cost.ToString("n") + " Beans";
+                Upgrade6Text.text = "Beans Per Second +" + Global.upgrade6Increase.ToString("n0") + "\nCosts: " + Global.upgrade6Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -159,7 +159,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade7Text.text = "Beans Per Second +" + Global.upgrade7Increase.ToString("n") + "\nCosts: " + Global.upgrade7Cost.ToString("n") + " Beans";
+                Upgrade7Text.text = "Beans Per Second +" + Global.upgrade7Increase.ToString("n0") + "\nCosts: " + Global.upgrade7Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -176,7 +176,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade8Text.text = "Beans Per Second +" + Global.upgrade8Increase.ToString("n") + "\nCosts: " + Global.upgrade8Cost.ToString("n") + " Beans";
+                Upgrade8Text.text = "Beans Per Second +" + Global.upgrade8Increase.ToString("n0") + "\nCosts: " + Global.upgrade8Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -193,7 +193,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade9Text.text = "Beans Per Second +" + Global.upgrade9Increase.ToString("n") + "\nCosts: " + Global.upgrade9Cost.ToString("n") + " Beans";
+                Upgrade9Text.text = "Beans Per Second +" + Global.upgrade9Increase.ToString("n0") + "\nCosts: " + Global.upgrade9Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -210,7 +210,7 @@ public class BeanCounter : MonoBehaviour
             }
             else
             {
-                Upgrade10Text.text = "Beans Per Second +" + Global.upgrade10Increase.ToString("n") + "\nCosts: " + Global.upgrade10Cost.ToString("n") + " Beans";
+                Upgrade10Text.text = "Beans Per Second +" + Global.upgrade10Increase.ToString("n0") + "\nCosts: " + Global.upgrade10Cost.ToString("n0") + " Beans";
             }
         }
     }
@@ -226,8 +226,8 @@ public class BeanCounter : MonoBehaviour
             Global.beansPerClick += increase;
         }
         Global.numBeans -= cost;
-        BeansCountText.text = "Beans: " + Global.numBeans.ToString("n");
-        BeansPerClickText.text = "BPC: " + Global.beansPerClick.ToString("n");
-        BeansPerSecText.text = "BPS: " + Global.beansPerSec.ToString("n");
+        BeansCountText.text = "Beans: " + Global.numBeans.ToString("n0");
+        BeansPerClickText.text = "BPC: " + Global.beansPerClick.ToString("n0");
+        BeansPerSecText.text = "BPS: " + Global.beansPerSec.ToString("n0");
     }
 }
