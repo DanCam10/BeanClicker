@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BeanCounter : MonoBehaviour
 {
@@ -212,6 +213,14 @@ public class BeanCounter : MonoBehaviour
             {
                 Upgrade10Text.text = "Beans Per Second +" + Global.upgrade10Increase.ToString("n0") + "\nCosts: " + Global.upgrade10Cost.ToString("n0") + " Beans";
             }
+        }
+    }
+
+    public void Win()
+    {
+        if (Global.numBeans >= 1000000)
+        {
+            SceneManager.LoadScene("WinScreen");
         }
     }
 

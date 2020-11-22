@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 647502a7127eef34cb3778d4e178c79d
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 1e4426009f9713d449e36fac77bc2ac2
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 6ac75f72e17438648acc507d795f8931
   m_configObjects: {}
