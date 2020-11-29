@@ -46,6 +46,11 @@ public class BeanCounter : MonoBehaviour
         BeansCountText.text = "Beans: " + Global.numBeans.ToString("n0");
     }
 
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
     public void Upgrade1()
     {
         if (Global.upgrade1Cost < Global.upgrade1MaxCost && Global.numBeans >= Global.upgrade1Cost)

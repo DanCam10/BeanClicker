@@ -13,7 +13,7 @@ public class StartButton : MonoBehaviour
     {
         newGameButton.SetActive(false);
 
-        if (Global.hasWonGame)
+        if (Global.hasStartedGame)
         {
             startButtonText.text = "Continue";
             newGameButton.SetActive(true);

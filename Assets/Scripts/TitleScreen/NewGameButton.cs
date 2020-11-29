@@ -11,7 +11,7 @@ public class NewGameButton : MonoBehaviour
          Global.numBeans = 0;
          Global.beansPerClick = 1;
          Global.beansPerSec = 0;
-        Global.hasWonGame = false;
+         Global.hasStartedGame = false;
 
         //Upgrade 1
          Global.upgrade1Increase = 1;

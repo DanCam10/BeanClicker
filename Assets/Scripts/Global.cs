@@ -5,10 +5,10 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
     //General Beans
-    public static int numBeans = 999999;
+    public static int numBeans = 0;
     public static int beansPerClick = 1;
     public static int beansPerSec = 0;
-    public static bool hasWonGame = false;
+    public static bool hasStartedGame = false;
 
     //Upgrade 1
     public static int upgrade1Increase = 1;

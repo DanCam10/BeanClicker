@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartButton : MonoBehaviour
+public class ToTitleScreen : MonoBehaviour
 {
-    public void Restart()
+    public void TitleScreen()
     {
-        Global.hasStartedGame = true;
         SceneManager.LoadScene("TitleScreen");
     }
 }
